@@ -27,32 +27,63 @@
 
    * { box-sizing: border-box; }
 
-/* ←ここから貼る！！！ */
+.feature-section {
+  width: min(var(--max), calc(100% - 32px));
+  margin: 0 auto 80px;
+}
+
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .feature-card {
-  background: rgba(255,255,255,0.5);
-  padding: 24px;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(29,28,26,0.08);
+  border-radius: 28px;
+  box-shadow: 0 16px 36px rgba(45,36,26,0.08);
+  padding: 32px 28px;
+  min-height: 260px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(45,36,26,0.12);
 }
 
 .feature-card h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
+  margin: 0 0 16px;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-@media (max-width: 768px) {
+.feature-card p {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.cta {
+  margin-bottom: 48px;
+}
+
+@media (max-width: 900px) {
   .feature-grid {
     grid-template-columns: 1fr;
   }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .feature-card h3 {
+    font-size: 1.6rem;
+  }
 }
-/* ←ここまで */
     
     section > div {
   background: rgba(255,255,255,0.05);
@@ -936,26 +967,26 @@
     </section>
  </main>
 
-<section>
+<section class="feature-section">
   <div class="feature-grid">
     <div class="feature-card">
       <h3>アーユルヴェーダ</h3>
-      <p>5000年の伝統医学で、自分の体質に合わせたケアを受けられる体験。</p>
+      <p>5000年続く伝統医療の考え方に触れながら、自分の体質に合った整え方を知る体験。観光だけでは終わらない、心と体の両方に残る時間です。</p>
     </div>
 
     <div class="feature-card">
       <h3>シーギリヤロック</h3>
-      <p>空と大地の境界に立つような絶景。</p>
+      <p>天空に突き出す巨大な岩山の頂上に立てば、どこまでも広がる緑の景色に圧倒されます。悩みの輪郭が少し小さく見えるような、スケールの大きな絶景です。</p>
     </div>
 
     <div class="feature-card">
       <h3>紅茶列車</h3>
-      <p>霧の中を走る幻想的な列車旅。</p>
+      <p>霧に包まれた高原の茶畑をゆっくり走る列車旅。窓の外に流れる緑とひんやりした空気が、スリランカらしい静かな時間を感じさせてくれます。</p>
     </div>
 
     <div class="feature-card">
       <h3>一人旅でも安心</h3>
-      <p>穏やかな人々と、日本語対応の施設もあり安心です。</p>
+      <p>穏やかな人々の空気感に加えて、日本語対応の施設や滞在しやすいリゾートもあり、海外一人旅に少し不安がある人でも挑戦しやすい旅先です。</p>
     </div>
   </div>
 </section>
