@@ -25,7 +25,34 @@
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; }
+   * { box-sizing: border-box; }
+
+/* ←ここから貼る！！！ */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.5);
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ←ここまで */
     
     section > div {
   background: rgba(255,255,255,0.05);
@@ -773,7 +800,7 @@
     <section class="section-box glass" id="story">
       <div class="section-head">
         <h2 class="section-title">スリランカに惹かれる理由</h2>
-        <p class="section-note">内省の言葉を、そのまま旅の誘いになるように再構成したメインストーリーです。</p>
+        <p class="section-note">スリランカに惹かれる理由を、静かにたどるための文章です。</p>
       </div>
       <div class="essay-wrap">
         <article class="essay">
@@ -910,27 +937,28 @@
  </main>
 
 <section>
-  <div>
-    <h2>アーユルヴェーダ</h2>
-    <p>5000年の伝統医学で、自分の体質に合わせたケアを受けられる体験。</p>
-  </div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h3>アーユルヴェーダ</h3>
+      <p>5000年の伝統医学で、自分の体質に合わせたケアを受けられる体験。</p>
+    </div>
 
-  <div>
-    <h2>シーギリヤロック</h2>
-    <p>空と大地の境界に立つような絶景。</p>
-  </div>
+    <div class="feature-card">
+      <h3>シーギリヤロック</h3>
+      <p>空と大地の境界に立つような絶景。</p>
+    </div>
 
-  <div>
-    <h2>紅茶列車</h2>
-    <p>霧の中を走る幻想的な列車旅。</p>
-  </div>
+    <div class="feature-card">
+      <h3>紅茶列車</h3>
+      <p>霧の中を走る幻想的な列車旅。</p>
+    </div>
 
-  <div>
-    <h2>一人旅でも安心</h2>
-    <p>穏やかな人々と、日本語対応の施設もあり安心です。</p>
+    <div class="feature-card">
+      <h3>一人旅でも安心</h3>
+      <p>穏やかな人々と、日本語対応の施設もあり安心です。</p>
+    </div>
   </div>
 </section>
-
 <footer>
     Sri Lanka travel concept page / written in Japanese / built to make someone quietly want to go.
   </footer>
